@@ -7,10 +7,10 @@ services:
 
 before_install:
   - echo "start"
-  - docker build -t BrokenMental/travis-test -f  Dockerfile.dev .
+  - docker build -t brokenmental/docker_react -f  Dockerfile.dev .
 
 script:
-  - docker run -e CI=true BrokenMental/travis-test npm run test -- --coverage
+  - docker run -e CI=true brokenmental/docker_react npm run test -- --coverage
 
 after_success:
   - echo "end"
